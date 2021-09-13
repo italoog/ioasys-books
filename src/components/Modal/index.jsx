@@ -1,5 +1,4 @@
 import React from "react";
-// import Container from "./styles.js";
 import {
   Container,
   CloseIconContainer,

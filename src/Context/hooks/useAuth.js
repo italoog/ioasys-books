@@ -1,6 +1,5 @@
 import { useState, useEffect, createContext, useContext } from "react";
-import router from 'next/dist/client/router'
-
+import router from "next/dist/client/router";
 
 import api from "../../services/api";
 
@@ -32,7 +31,10 @@ export const AuthProvider = ({ children }) => {
 
     localStorage.setItem("@ioasys-books:name", JSON.stringify(name));
     localStorage.setItem("@ioasys-books:token", JSON.stringify(token));
-    localStorage.setItem("@ioasys-books:refresh-token", JSON.stringify(refreshToken));
+    localStorage.setItem(
+      "@ioasys-books:refresh-token",
+      JSON.stringify(refreshToken)
+    );
 
     api.defaults.headers.Authorization = `Bearer ${token}`;
 
@@ -45,8 +47,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("@ioasys-books:name");
     localStorage.removeItem("@ioasys-books:refresh-token");
     api.defaults.headers.Authorization = undefined;
-    router.push('/')
-
+    router.push("/");
   }
 
   return (
@@ -56,7 +57,6 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-
 };
 
 export const useAuth = () => {

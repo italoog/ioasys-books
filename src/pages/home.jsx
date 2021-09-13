@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
-import Head from 'next/head'
+import Head from "next/head";
 import api from "../services/api";
 import Cards from "../components/Card";
 import getTokenApi from "../utils/getToken";
-import { useAuth } from '../Context/hooks/useAuth'
-
+import { useAuth } from "../Context/hooks/useAuth";
 
 import {
   CardsBox,
@@ -22,16 +21,14 @@ import {
   Pagination,
 } from "../styles/pages/home";
 
-import Logo from '../assets/logo.svg'
-
+import Logo from "../assets/logo.svg";
 
 export default function Home() {
   const [booksData, setBooksData] = useState({ data: [] });
   const [pageLength, setPageLenght] = useState(0);
   const [page, setPage] = useState(1);
   const [user, setUser] = useState("");
-  const { handleLogout } = useAuth()
-
+  const { handleLogout } = useAuth();
 
   useEffect(() => {
     (async () => {

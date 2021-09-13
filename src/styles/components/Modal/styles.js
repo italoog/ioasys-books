@@ -138,7 +138,7 @@ export const InfoTitle = styled.div`
 `;
 
 export const RowContainer = styled.div`
-padding: 10px 0;
+  padding: 10px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
